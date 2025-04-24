@@ -1,78 +1,44 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f9fafb;
-}
-
-.container {
-  max-width: 800px;
-  margin: 5rem auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.login-container {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  max-width: 400px;
-  margin: auto;
-}
-
-h1, h2 {
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-}
-
-.auth-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.form-group {
-  text-align: left;
-}
-
-.form-group label {
-  font-weight: 500;
-  margin-bottom: 0.3rem;
-  display: block;
-}
-
-.form-group input {
+/* globals.css */
+.input-style {
   width: 100%;
-  padding: 0.8rem;
+  padding: 0 1rem;  /* Equivalent to px-4 */
+  height: 3rem;     /* Equivalent to py-3 */
+  border-radius: 0.5rem;
   border: 1px solid #d1d5db;
-  border-radius: 8px;
+  transition: all 0.2s;
 }
 
-.auth-button {
-  background-color: #3b82f6;
-  color: white;
-  padding: 0.8rem 1.5rem;
+.input-style:focus {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+.button-style {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
   font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s ease;
+  color: white;
+  transition: background-color 0.2s;
 }
 
-.auth-button:hover {
-  background-color: #2563eb;
+/* Indigo button */
+.bg-indigo-500 {
+  background-color: #6366f1;
+}
+.bg-indigo-500:hover {
+  background-color: #4f46e5;
 }
 
-.auth-button.danger {
-  background-color: #ef4444;
+/* Green button */
+.bg-green-500 {
+  background-color: #22c55e;
+}
+.bg-green-500:hover {
+  background-color: #16a34a;
 }
 
-.auth-button.danger:hover {
-  background-color: #dc2626;
-}
-
-.error {
-  color: #dc2626;
-  font-size: 0.9rem;
+/* Disabled state */
+.disabled\:opacity-50:disabled {
+  opacity: 0.5;
 }
