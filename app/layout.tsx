@@ -24,9 +24,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Auth Flow App',
   description: 'Secure authentication flow application',
-  other: {
-    'lightningcss-warning': 'disabled' // Add this to suppress lightningcss warnings
-  }
+ 
 }
 
 export default function RootLayout({
