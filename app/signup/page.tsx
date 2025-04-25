@@ -1,4 +1,4 @@
-// app/signup/page.tsx
+
 'use client';
 
 import { useState } from 'react';
@@ -21,16 +21,16 @@ export default function SignUpPage() {
     setError('');
 
     try {
-      // Create the sign up attempt
+    
       await signUp.create({
         emailAddress: email,
         password,
       });
 
-      // Send verification code
+    
       await signUp.prepareEmailAddressVerification();
       
-      // Redirect to verification page
+     
       router.push('/verify');
     } catch (err: any) {
       setError(err.errors[0].message);

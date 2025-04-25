@@ -1,8 +1,8 @@
-/* globals.css */
+
 .input-style {
   width: 100%;
-  padding: 0 1rem;  /* Equivalent to px-4 */
-  height: 3rem;     /* Equivalent to py-3 */
+  padding: 0 1rem;  
+  height: 3rem;   
   border-radius: 0.5rem;
   border: 1px solid #d1d5db;
   transition: all 0.2s;
@@ -22,7 +22,7 @@
   transition: background-color 0.2s;
 }
 
-/* Indigo button */
+
 .bg-indigo-500 {
   background-color: #6366f1;
 }
@@ -30,7 +30,6 @@
   background-color: #4f46e5;
 }
 
-/* Green button */
 .bg-green-500 {
   background-color: #22c55e;
 }
@@ -38,7 +37,7 @@
   background-color: #16a34a;
 }
 
-/* Disabled state */
+
 .disabled\:opacity-50:disabled {
   opacity: 0.5;
 }

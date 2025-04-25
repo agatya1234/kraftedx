@@ -20,16 +20,28 @@ export default function LoginPage() {
     setError('');
 
     try {
+     
       const result = await signIn.create({
         identifier: email,
         password,
+        strategy: "password", 
       });
 
-      if (result.status === 'complete') {
-        router.push('/dashboard');
+      if (result.status === "complete") {
+        
+        if (result.createdSessionId) {
+          router.push('/dashboard');
+        }
       }
     } catch (err: any) {
-      setError(err.errors[0].message);
+      
+      if (err.errors[0]?.code === 'form_identifier_not_found') {
+        setError('Account not found. Please check your email.');
+      } else if (err.errors[0]?.code === 'form_password_incorrect') {
+        setError('Incorrect password. Please try again.');
+      } else {
+        setError('Login failed. Please try again later.');
+      }
     } finally {
       setLoading(false);
     }
@@ -48,6 +60,7 @@ export default function LoginPage() {
               className="input-style"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
             />
           </div>
           <div>
@@ -58,9 +71,14 @@ export default function LoginPage() {
               className="input-style"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter your password"
             />
           </div>
-          {error && <p className="text-red-500 text-sm">{error}</p>}
+          {error && (
+            <div className="p-3 bg-red-50 text-red-700 rounded-lg text-sm">
+              {error}
+            </div>
+          )}
           <button
             type="submit"
             disabled={loading}
