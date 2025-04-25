@@ -7,16 +7,26 @@ import './globals.css'
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
+  display: 'swap',
+  adjustFontFallback: false,
+  fallback: ['system-ui', 'sans-serif']
 })
 
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
+  display: 'block',
+  preload: true,
+  fallback: ['monospace']
 })
+
 
 export const metadata: Metadata = {
   title: 'Auth Flow App',
   description: 'Secure authentication flow application',
+  other: {
+    'lightningcss-warning': 'disabled' // Add this to suppress lightningcss warnings
+  }
 }
 
 export default function RootLayout({
@@ -27,7 +37,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <body className={`${geistSans.variable} ${geistMono.variable}  font-sans antialiased`}>
           {children}
         </body>
       </html>

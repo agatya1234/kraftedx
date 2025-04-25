@@ -1,7 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  experimental: {
+    swcPlugins: [
+      ['@next/swc-plugin-lightningcss', { 
+        unstable_useLocalLightningcss: true 
+      }]
+    ]
+  }
 };
 
 export default nextConfig;
